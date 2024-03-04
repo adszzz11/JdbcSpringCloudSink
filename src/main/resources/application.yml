@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    stream:
+      function:
+        bindings:
+          messageSink-in-0: input
+  datasource:
+    url: jdbc:mariadb://localhost:13306/test
+    username: root
+    password: root123
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: false
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
