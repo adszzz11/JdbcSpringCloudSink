@@ -1,4 +1,4 @@
-package com.example.dataflow.JdbcSpringCloudSink;
+package com.example.dataflow.JdbcSpringCloudSink.exception;
 
 import java.rmi.NotBoundException;
 

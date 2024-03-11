@@ -1,4 +1,4 @@
-package com.example.dataflow.JdbcSpringCloudSink;
+package com.example.dataflow.JdbcSpringCloudSink.business;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,7 +36,7 @@ public class BundleEntity {
         List<String> columns = List.of(new String[]{"seq", "Cint1", "Cstr1", "Cdate1"});
         //validate
         for (String column : columns) {
-            if (!map.containsKey(column)) throw new NotBoundException("NOT MATCH COLUMN");
+            if (!map.containsKey(column)) throw new NotBoundException("columns : " + columns.toString() + ", failed column : " + column);
         }
         this.seq = (Integer) map.get("seq");
         this.Cint1 = (Integer) map.get("Cint1");
